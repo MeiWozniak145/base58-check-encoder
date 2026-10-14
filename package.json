@@ -1,6 +1,6 @@
 {
   "name": "base58-check-encoder",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Encode and decode Base58Check with a pluggable checksum byte, supporting Bitcoin and Ripple alphabets.",
   "type": "module",
   "main": "src/index.js",
