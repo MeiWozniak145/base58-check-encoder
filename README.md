@@ -31,3 +31,10 @@ The default alphabet is Bitcoin's; the default checksum length is 4 bytes.
 A leading zero byte in the payload is encoded as the first character of the chosen alphabet. For Bitcoin that is `1`; for Ripple it is `r`. If you encode with one alphabet and decode with the other, you will almost certainly get a checksum-mismatch error rather than a clean recovery. Always pass the same `alphabet` to both sides.
 
 Run the tests with `node --test`.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
